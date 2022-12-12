@@ -1,0 +1,17 @@
+function solution($n) {
+  $r = 0;
+  $t = 0;
+  $S = (string)decbin($n);
+  for ($i = 0; $i < strlen($S); $i++) {
+    $s = $S[$i];
+    if ($s == 1) {
+      if ($t > $r) {
+        $r = $t;
+      }
+      $t = 0;
+    } else {
+      $t++;
+    }
+  }
+  return $r;
+}
